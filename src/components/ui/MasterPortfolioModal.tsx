@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Camera, Star, Calendar, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Master } from "@/data/masters";
+import { getAssetPath } from "@/lib/utils";
 
 interface MasterPortfolioModalProps {
   master: Master | null;
@@ -62,7 +63,7 @@ export function MasterPortfolioModal({
               <div className="flex items-center gap-4">
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-florida-rose shadow-md shrink-0">
                   <Image
-                    src={master.avatar}
+                    src={getAssetPath(master.avatar)}
                     alt={master.name}
                     fill
                     sizes="(max-width: 640px) 64px, 80px"
@@ -116,7 +117,7 @@ export function MasterPortfolioModal({
               {master.portfolio.length > 0 && (
                 <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-rose-200 shadow-md bg-white">
                   <Image
-                    src={master.portfolio[selectedPhotoIndex].image}
+                    src={getAssetPath(master.portfolio[selectedPhotoIndex].image)}
                     alt={master.portfolio[selectedPhotoIndex].caption || `Работа мастера ${master.name}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 768px"
@@ -141,7 +142,7 @@ export function MasterPortfolioModal({
                       }`}
                     >
                       <Image
-                        src={photo.image}
+                        src={getAssetPath(photo.image)}
                         alt={`Миниатюра ${idx + 1}`}
                         fill
                         sizes="80px"

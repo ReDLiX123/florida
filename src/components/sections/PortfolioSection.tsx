@@ -18,6 +18,7 @@ import {
   Palette,
   CheckCircle2,
 } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 export interface PortfolioItem {
   id: string;
@@ -482,7 +483,7 @@ export function PortfolioSection({ onBookWithMaster }: PortfolioSectionProps) {
               {/* Photo View Container */}
               <div className="relative w-full md:w-[54%] h-[min(52dvh,430px)] md:h-auto md:min-h-[460px] bg-burgundy-dark flex items-center justify-center overflow-hidden shrink-0">
                 <Image
-                  src={currentLightboxItem.image}
+                  src={getAssetPath(currentLightboxItem.image)}
                   alt={currentLightboxItem.caption}
                   fill
                   sizes="(max-width: 768px) 100vw, 54vw"
@@ -536,7 +537,7 @@ export function PortfolioSection({ onBookWithMaster }: PortfolioSectionProps) {
                   <div className="pt-3.5 border-t border-rose-100 flex items-center gap-3">
                     <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-florida-rose shrink-0 shadow-sm">
                       <Image
-                        src={currentLightboxItem.masterAvatar}
+                        src={getAssetPath(currentLightboxItem.masterAvatar)}
                         alt={currentLightboxItem.masterName}
                         fill
                         sizes="48px"
@@ -607,7 +608,7 @@ function PortfolioLookbookCard({
         className="relative aspect-[4/5] w-full overflow-hidden bg-cream-100 cursor-pointer"
       >
         <Image
-          src={item.image}
+          src={getAssetPath(item.image)}
           alt={item.caption}
           fill
           sizes="(max-width: 768px) 84vw, (max-width: 1200px) 33vw, 25vw"
@@ -647,7 +648,7 @@ function PortfolioLookbookCard({
           <div className="flex items-center gap-2 pt-1">
             <div className="relative w-5 h-5 rounded-full overflow-hidden border border-florida-powder shrink-0">
               <Image
-                src={item.masterAvatar}
+                src={getAssetPath(item.masterAvatar)}
                 alt={item.masterName}
                 fill
                 sizes="20px"

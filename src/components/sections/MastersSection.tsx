@@ -14,6 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { MASTERS, Master } from "@/data/masters";
+import { getAssetPath } from "@/lib/utils";
 
 interface MastersSectionProps {
   onBookWithMaster: (masterId: string) => void;
@@ -319,7 +320,7 @@ function MasterLookbookCard({
         {/* 1. EDITORIAL PORTRAIT SECTION */}
         <div className="relative aspect-[4/5] w-full overflow-hidden bg-cream-100">
           <Image
-            src={master.avatar}
+            src={getAssetPath(master.avatar)}
             alt={master.name}
             fill
             sizes="(max-width: 768px) 84vw, (max-width: 1200px) 33vw, 25vw"
@@ -418,7 +419,7 @@ function MasterLookbookCard({
                       aria-label={`Посмотреть работу мастера ${master.name}`}
                     >
                       <Image
-                        src={work.image}
+                        src={getAssetPath(work.image)}
                         alt={work.caption || `Работа ${idx + 1}`}
                         fill
                         sizes="80px"

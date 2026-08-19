@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Flower2 } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 export function BloomingFlowerSvg() {
   return (
@@ -98,7 +99,7 @@ export function BloomingFlowerSvg() {
         {/* Inner Floral Disc Frame */}
         <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/90 shadow-inner bg-cream-100">
           <Image
-            src="/media/hero-flower.jpg"
+            src={getAssetPath("/media/hero-flower.jpg")}
             alt="Раскрывающийся цветок розы — Флорида"
             fill
             priority

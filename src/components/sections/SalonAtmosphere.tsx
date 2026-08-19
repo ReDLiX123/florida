@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Coffee, CheckCircle } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 export function SalonAtmosphere() {
   const stats = [
@@ -88,7 +89,7 @@ export function SalonAtmosphere() {
               className="group relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white shadow-md bg-cream-200"
             >
               <Image
-                src={img.src}
+                src={getAssetPath(img.src)}
                 alt={img.caption}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
