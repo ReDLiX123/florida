@@ -30,9 +30,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Redundant root raw media folder (public/media is tracked)
-/media/
-
 # Agent/Claude metadata files
 claude.md
 CLAUDE.md
